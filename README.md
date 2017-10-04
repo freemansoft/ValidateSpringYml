@@ -1,13 +1,13 @@
 ## Validate all YML files as part of your CI build
 
-This test ValidateSpring can be used to validate spring boot (or other) yml files as part of the compilation process.
+This test can be used to validate spring boot (or other) yml files as part of the compilation process.
 It is primarily aimed at validating basic markup errors and does not know anything about how the
 properties are actually ued. This test should work on all yml files
 
-1. Copy the test class in [src/test/java/org/springframework/beans/factory/config](src/test/java/org/springframework/beans/factory/config)
+1. Copy the test class _ValidateSpringYml_ from [src/test/java/org/springframework/beans/factory/config](src/test/java/org/springframework/beans/factory/config)
  to the same package location in your project's test source tree.
-1. Delete the sample @Test annotated methods and replace them with your own. 
-Retain  validateAllYml() to validate all application and test yml files.
+1. Edit the @Test methods to meet your needs. 
+Alternatively, retain validateAllYml() which will validate all application and test yml files.
 
 ## Test log output
 Logging output does not appear on the console when running _gradle test_. Logging output is available at
@@ -16,7 +16,7 @@ Logging output does not appear on the console when running _gradle test_. Loggin
 
 ## Example Notes
 1. This project contains one good and one bad yml file.
-The "*" test fails because of the bad yml file in src/test/resources
+The "*" test fails because int validates all yml files on the path including the bad yml file in src/test/resources
 1. The test class must be in the spring package because it accesses protected code.
 
 ## Dependencies
